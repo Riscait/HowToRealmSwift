@@ -19,16 +19,13 @@ class RecordVC: UIViewController, RealmPrimaryKeyIncrementerProtocol {
     
     // MARK: - Actions
     @IBAction func recordSampleData(_ sender: UIButton) {
-        
         let realm = try! Realm()
-        
         let sampleData = createSampleData()
         
         try! realm.write {
             realm.add(sampleData)
         }
         print("Recorded:", sampleData)
-        
         dismiss(animated: true, completion: nil)
     }
     
@@ -55,7 +52,7 @@ class RecordVC: UIViewController, RealmPrimaryKeyIncrementerProtocol {
         let sampleData = SampleDataModel()
         
         sampleData.id = newId(model: sampleData)
-        sampleData.name = nameField.text ?? ""
+        sampleData.name = nameField.text!
         sampleData.memo = memoField.text
         sampleData.category = categorySegment.selectedSegmentIndex
         
@@ -64,6 +61,7 @@ class RecordVC: UIViewController, RealmPrimaryKeyIncrementerProtocol {
 }
 
 // MARK: - UITextFieldDelegate
+// Note: Connect delegates with a storyboard.
 extension RecordVC: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         recordButton.isEnabled = validateSampleInput()

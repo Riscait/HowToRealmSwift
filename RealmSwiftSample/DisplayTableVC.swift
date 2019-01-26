@@ -11,14 +11,15 @@ import RealmSwift
 
 class DisplayTableVC: UITableViewController {
 
-    var result: Results<SampleDataModel>?
+    // MARK: - Properties
+    var sampleDataResults: Results<SampleDataModel>?
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let realm = try! Realm()
-        
-        result = realm.objects(SampleDataModel.self)
+        sampleDataResults = realm.objects(SampleDataModel.self)
         
     }
     
@@ -35,18 +36,19 @@ class DisplayTableVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return result?.count ?? 0
+        return sampleDataResults?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // ID of Cell set by the Storyboard
         let cell = tableView.dequeueReusableCell(withIdentifier: "sampleDataCell", for: indexPath)
 
-        guard let sampleDate = result?[indexPath.row] else { return cell }
+        guard let sampleDate = sampleDataResults?[indexPath.row] else { return cell }
 
         cell.textLabel?.text = sampleDate.name
         cell.detailTextLabel?.text = sampleDate.memo
         
-        // カテゴリーによって背景色を変える
+        // Change the background-color by Category
         switch SampleDataCategory(rawValue: sampleDate.category)! {
         case .life:
             cell.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)

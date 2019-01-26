@@ -6,7 +6,6 @@
 //  Copyright © 2019 nerco studio. All rights reserved.
 //
 
-import Foundation
 import RealmSwift
 
 class SampleDataModel: Object {
