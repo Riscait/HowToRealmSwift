@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="m8M-2O-BLc">
-                                <rect key="frame" x="87.5" y="84" width="200" height="226"/>
+                                <rect key="frame" x="87.5" y="84" width="200" height="283"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3y4-jb-Fc7">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="29"/>
@@ -29,29 +29,59 @@
                                         </segments>
                                         <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名前" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="g0a-iF-r5s">
-                                        <rect key="frame" x="0.0" y="64" width="200" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="e2L-GA-cGP"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メモ" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iAv-Nn-R1V">
-                                        <rect key="frame" x="0.0" y="130" width="200" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="JKM-Ae-sdf"/>
-                                        </connections>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1hu-Dl-5QJ">
+                                        <rect key="frame" x="0.0" y="64" width="200" height="58.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNx-Fz-8JD">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.59999999999999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名前は入力必須です" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="g0a-iF-r5s">
+                                                <rect key="frame" x="0.0" y="28.5" width="200" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="e2L-GA-cGP"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rHU-rW-2Z4">
+                                        <rect key="frame" x="0.0" y="158.5" width="200" height="58.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqg-zn-cDG">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メモ" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iAv-Nn-R1V">
+                                                <rect key="frame" x="0.0" y="28.5" width="200" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="JKM-Ae-sdf"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="iAv-Nn-R1V" firstAttribute="width" secondItem="rHU-rW-2Z4" secondAttribute="width" id="N7Y-gB-D8H"/>
+                                            <constraint firstItem="nqg-zn-cDG" firstAttribute="leading" secondItem="rHU-rW-2Z4" secondAttribute="leading" id="de0-s9-7Zy"/>
+                                        </constraints>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeI-sV-Ea5">
-                                        <rect key="frame" x="0.0" y="196" width="200" height="30"/>
+                                        <rect key="frame" x="0.0" y="253" width="200" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="登録">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.59999999999999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.59999999999999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="recordSampleData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nrb-9O-9h3"/>
@@ -59,11 +89,11 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="1hu-Dl-5QJ" firstAttribute="width" secondItem="m8M-2O-BLc" secondAttribute="width" id="EWr-ek-Ndm"/>
                                     <constraint firstAttribute="width" constant="200" id="M07-4G-Soq"/>
-                                    <constraint firstItem="iAv-Nn-R1V" firstAttribute="width" secondItem="m8M-2O-BLc" secondAttribute="width" id="bv6-Xu-fgB"/>
                                     <constraint firstItem="jeI-sV-Ea5" firstAttribute="width" secondItem="m8M-2O-BLc" secondAttribute="width" id="cjG-NI-TFB"/>
-                                    <constraint firstItem="g0a-iF-r5s" firstAttribute="width" secondItem="m8M-2O-BLc" secondAttribute="width" id="i0e-Ed-GOg"/>
                                     <constraint firstItem="3y4-jb-Fc7" firstAttribute="width" secondItem="m8M-2O-BLc" secondAttribute="width" id="xXr-Z5-eEo"/>
+                                    <constraint firstItem="rHU-rW-2Z4" firstAttribute="width" secondItem="m8M-2O-BLc" secondAttribute="width" id="zoj-oR-s9P"/>
                                 </constraints>
                             </stackView>
                         </subviews>

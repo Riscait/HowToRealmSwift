@@ -68,6 +68,7 @@ extension RecordVC: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        recordButton.isEnabled = validateSampleInput()
         textField.endEditing(true)
         return true
     }
